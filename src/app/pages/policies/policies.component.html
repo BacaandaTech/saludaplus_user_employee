@@ -1,0 +1,15 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Inicio</a></li>
+    <li class="breadcrumb-item">
+      <a [routerLink]="['/policies/list']">Mis polizas</a>
+    </li>
+    <li class="breadcrumb-item" *ngIf="route_url === '/policies/create'">
+      <a [routerLink]="['/policies/create']">Agregar póliza</a>
+    </li>
+    <li class="breadcrumb-item" *ngIf="route_url.includes('/policies/detail/')">
+      <a [routerLink]="['/policies/detail/sdfds']">Detalle de póliza</a>
+    </li>
+  </ol>
+</nav>
+<router-outlet></router-outlet>

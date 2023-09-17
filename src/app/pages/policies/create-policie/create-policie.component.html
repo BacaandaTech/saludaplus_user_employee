@@ -1,0 +1,45 @@
+<section>
+  <h1>Add policie</h1>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="firstName">Nombre:</label>
+      <input type="text" id="firstName" formControlName="firstName" />
+    </div>
+    <div>
+      <label for="paternalSurname">Apellido Paterno:</label>
+      <input type="text" id="paternalSurname" formControlName="paternalSurname" />
+    </div>
+    <div>
+      <label for="maternalSurname">Apellido Materno:</label>
+      <input type="text" id="maternalSurname" formControlName="maternalSurname" />
+    </div>
+    <div>
+      <label for="phone">Teléfono:</label>
+      <input type="tel" id="phone" formControlName="phone" />
+    </div>
+    <div>
+      <label for="dob">Fecha de nacimiento:</label>
+      <input type="date" id="dob" formControlName="dob" />
+    </div>
+    <div>
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" formControlName="email" />
+    </div>
+
+    <h3>Método de pago</h3>
+
+    <div>
+      <input type="radio" id="card" formControlName="payment_method" value="card" checked />
+      <label for="card">Tarjeta de crédito o débito</label>
+    </div>
+
+    <div>
+      <input type="radio" id="oxxo" formControlName="payment_method" value="oxxo" />
+      <label for="oxxo">Depósito en OXXO</label>
+    </div>
+    
+    <button type="submit">Comprar póliza</button>
+
+  </form>
+</section>
