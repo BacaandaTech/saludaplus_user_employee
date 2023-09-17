@@ -8,18 +8,21 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './shared/interceptors/jwt.inteceptor';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 import { HomeComponent } from './pages/home/home.component';
-import { GuidesDocsComponent } from './pages/guides-docs/guides-docs.component';
+import { PolicieComponent } from './pages/policie/policie.component';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    GuidesDocsComponent,
+    PolicieComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    BsDatepickerModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

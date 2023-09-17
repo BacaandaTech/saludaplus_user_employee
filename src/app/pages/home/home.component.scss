@@ -4,7 +4,14 @@
 
 
     .card-home-redirect {
-        width: 10rem;
         cursor: pointer;
+        border: 2px solid black;
+        min-height: 226px;
+        display: flex;
+        flex-direction: row;
+        align-items: end;
+        h5 {
+
+        }
     }
 }
