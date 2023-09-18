@@ -1,7 +1,29 @@
 
 <header>
-  <nav class="navbar navbar-dark bg-dark">
-    <span class="navbar-brand mb-0 h1 ps-5 cursor-pointer" [routerLink]='["/"]'>Navbar</span>
+  <nav class="navbar navbar-dark bg-dark px-5">
+    <span class="navbar-brand mb-0 h1 cursor-pointer" [routerLink]='["/"]'><h1>Saluda+</h1></span>
+    <div class="d-flex align-items-center">
+      <h3 class="text-white">Hola, Usuario!</h3>
+      <span class="container-avatar-default-navbar ms-4">
+        <img src="../assets/img/avatar-default.svg" />
+      </span>
+    </div>
+  </nav>
+  <nav class="navbar-bradcrumb px-5">
+    <div class="breadcrumb cursor-pointer">
+      <div [routerLink]='["/"]'>
+        Inicio
+      </div>
+      <div class="ms-2 cursor-pointer" [routerLink]='["/mi-poliza"]' *ngIf="route_url === '/mi-poliza'"> > Mi póliza</div>
+    </div>
+    <div>
+      <span *ngIf="route_url === '/'; else elseBlock" >Consola de usuario</span>
+      <ng-template #elseBlock>
+        <div class="close-icon-return"  [routerLink]='["/"]'>
+          x
+        </div>
+      </ng-template>
+    </div>
   </nav>
 </header>
 <section id="main-container">

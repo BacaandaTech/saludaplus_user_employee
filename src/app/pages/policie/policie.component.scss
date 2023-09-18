@@ -1,0 +1,23 @@
+.policie-detail {
+    width: 100%;
+    background-color: #DDD;
+    // height: 600px;
+    border-radius: 1em;
+    margin-top: 2em;
+    padding: 2em;
+    color: gray;
+    font-weight: 600;
+
+    .dot-green {
+        display: block;
+        background-color: green;
+        width: 30px;
+        height: 30px;
+        border-radius: 100%;
+        border: 1px solid black;
+    }
+
+    .form-control {
+        border: 2px solid black;
+    }
+}

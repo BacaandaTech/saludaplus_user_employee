@@ -1,19 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { PolicieComponent } from './pages/policie/policie.component';
 
 const routes: Routes = [
   { 
-    path: 'policies', 
-    loadChildren: () => import('./pages/policies/policies.module').then(m => m.PoliciesModule)
-  },
-  { 
-    path: 'contacts', 
-    loadChildren: () => import('./pages/contacts/contacts.module').then(m => m.ContactsModule)
-  },
-  { 
     path: '', 
     component: HomeComponent
+  },
+  { 
+    path: 'mi-poliza', 
+    component: PolicieComponent
   }
 ];
 
