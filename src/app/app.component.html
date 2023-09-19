@@ -15,6 +15,11 @@
         Inicio
       </div>
       <div class="ms-2 cursor-pointer" [routerLink]='["/mi-poliza"]' *ngIf="route_url === '/mi-poliza'"> > Mi póliza</div>
+      <div class="ms-2 cursor-pointer" *ngIf="route_url.includes('/cursos')"> 
+        <span class="ms-2 cursor-pointer" [routerLink]='["/cursos"]' *ngIf="route_url.includes('/cursos')"> > Cursos</span>
+        <span class="ms-2 cursor-pointer" [routerLink]='["/cursos/negocio"]' *ngIf="route_url === '/cursos/negocio'"> > Negocio</span>
+      </div>
+      
     </div>
     <div>
       <span *ngIf="route_url === '/'; else elseBlock" >Consola de usuario</span>

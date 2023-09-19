@@ -9,8 +9,7 @@ import { JwtInterceptor } from './shared/interceptors/jwt.inteceptor';
 import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 import { HomeComponent } from './pages/home/home.component';
 import { PolicieComponent } from './pages/policie/policie.component';
-import { BsDatepickerModule } from 'ngx-bootstrap/datepicker'
-
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
