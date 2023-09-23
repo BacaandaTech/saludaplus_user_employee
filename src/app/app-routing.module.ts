@@ -11,7 +11,11 @@ const routes: Routes = [
   { 
     path: 'mi-poliza', 
     component: PolicieComponent
-  }
+  },
+  { 
+    path: 'cursos', 
+    loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule)
+  },
 ];
 
 @NgModule({
