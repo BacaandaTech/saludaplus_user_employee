@@ -10,18 +10,28 @@ import { ErrorInterceptor } from './shared/interceptors/error.interceptor';
 import { HomeComponent } from './pages/home/home.component';
 import { PolicieComponent } from './pages/policie/policie.component';
 import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { ModalLoginComponent } from './components/modal-login/modal-login.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { NotFoundComponent } from './pages/not-found/not-found.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     PolicieComponent,
+    ModalLoginComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     BsDatepickerModule.forRoot(),
+    FormsModule,
+    HttpClientModule,
+    ModalModule.forRoot(),
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

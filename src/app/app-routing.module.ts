@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PolicieComponent } from './pages/policie/policie.component';
+import { AuthGuard } from './shared/guards/auth.guard';
 
 const routes: Routes = [
   { 
@@ -9,8 +11,13 @@ const routes: Routes = [
     component: HomeComponent
   },
   { 
+    path: '404', 
+    component: NotFoundComponent
+  },
+  { 
     path: 'mi-poliza', 
-    component: PolicieComponent
+    component: PolicieComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'cursos', 
