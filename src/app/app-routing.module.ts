@@ -4,11 +4,16 @@ import { HomeComponent } from './pages/home/home.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PolicieComponent } from './pages/policie/policie.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
   { 
-    path: '', 
+    path: 'home', 
     component: HomeComponent
+  },
+  { 
+    path: 'login', 
+    component: LoginComponent
   },
   { 
     path: '404', 
@@ -21,7 +26,8 @@ const routes: Routes = [
   },
   { 
     path: 'cursos', 
-    loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule)
+    loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule),
+    canActivate: [AuthGuard]
   },
 ];
 

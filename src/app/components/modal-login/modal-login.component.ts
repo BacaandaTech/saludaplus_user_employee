@@ -29,7 +29,7 @@ export class ModalLoginComponent {
     }
     this.auth_service.login(credentials).subscribe((response) => {
       if (response && response.access_token) {
-        localStorage.setItem('access_token', response.access_token);        
+        localStorage.setItem('token', response.access_token);        
         this.auth_service.setCurrentUser(response.user);
         // this.router.navigateByUrl('/cursos');
       } else {

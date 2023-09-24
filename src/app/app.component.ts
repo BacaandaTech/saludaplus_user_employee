@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
+import { hasSession } from './shared/utils/utils';
+import { AuthService } from './shared/services/auth/auth.service';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,8 +13,10 @@ export class AppComponent {
   title = 'BacandaApp';
   private router_subscription: Subscription | undefined;
   route_url: any = '';
+  has_session = hasSession()
 
-  constructor(private router: Router) {
+
+  constructor(private router: Router, private auth_service: AuthService) {
     this.route_url = router.url;
   }
 
@@ -23,11 +27,13 @@ export class AppComponent {
       this.route_url = event;
       this.route_url = this.route_url.url;
     });
-
   }
   ngOnDestroy(): void {
     if (this.router_subscription) {
       this.router_subscription.unsubscribe();
     }
+  }
+  logoutAction(): void {
+    this.auth_service.logout();
   }
 }
