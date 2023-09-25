@@ -1,22 +1,22 @@
 
 <header>
   <nav class="navbar navbar-dark bg-dark px-5">
-    <span class="navbar-brand mb-0 h1 cursor-pointer" [routerLink]='["/"]'><h1>Saluda+</h1>{{has_session}}</span>
+    <span class="navbar-brand mb-0 h1 cursor-pointer" [routerLink]='["/home"]'><h1>Saluda+</h1></span>
     <div class="d-flex align-items-center" *ngIf="has_session">
-      <h3 class="text-white">Hola, Usuario!</h3>
+      <h3 class="text-white">Hola, {{name_user}}!</h3>
       <span class="container-avatar-default-navbar ms-4 dropend" type="button" id="dropdown-navbar" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="../assets/img/avatar-default.svg" />
       </span>
       <div class="dropdown">
         <ul class="dropdown-menu" aria-labelledby="dropdown-navbar">
-          <li><a class="dropdown-item" (click)="logoutAction()">Cerrar sesión</a></li>
+          <li class="cursor-pointer"><a class="dropdown-item" (click)="logoutAction()">Cerrar sesión</a></li>
         </ul>
       </div>
     </div>
   </nav>
   <nav class="navbar-bradcrumb px-5" *ngIf="has_session">
     <div class="breadcrumb cursor-pointer">
-      <div [routerLink]='["/"]'>
+      <div [routerLink]='["/home"]'>
         Inicio
       </div>
       <div class="ms-2 cursor-pointer" [routerLink]='["/mi-poliza"]' *ngIf="route_url === '/mi-poliza'"> > Mi póliza</div>
@@ -29,7 +29,7 @@
     <div>
       <span *ngIf="route_url === '/'; else elseBlock" >Consola de usuario</span>
       <ng-template #elseBlock>
-        <div class="close-icon-return"  [routerLink]='["/"]'>
+        <div class="close-icon-return"  [routerLink]='["/home"]'>
           x
         </div>
       </ng-template>
