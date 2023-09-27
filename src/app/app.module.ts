@@ -14,7 +14,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { LoginComponent } from './pages/login/login.component'
+import { LoginComponent } from './pages/login/login.component';
+import { SettingsComponent } from './pages/settings/settings.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { LoginComponent } from './pages/login/login.component'
     PolicieComponent,
     NotFoundComponent,
     LoginComponent,
+    SettingsComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,7 @@ import { LoginComponent } from './pages/login/login.component'
     FormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
+    ReactiveFormsModule,
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

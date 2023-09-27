@@ -5,6 +5,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { PolicieComponent } from './pages/policie/policie.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
+import { SettingsComponent } from './pages/settings/settings.component';
 
 const routes: Routes = [
   { 
@@ -19,6 +20,11 @@ const routes: Routes = [
   { 
     path: '404', 
     component: NotFoundComponent
+  },
+  { 
+    path: 'configuracion', 
+    component: SettingsComponent,
+    canActivate: [AuthGuard]
   },
   { 
     path: 'mi-poliza', 

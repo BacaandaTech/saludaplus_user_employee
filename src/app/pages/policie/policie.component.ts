@@ -36,8 +36,8 @@ export class PolicieComponent implements OnInit {
       user_name: `${data.user.meta.name} ${data.user.meta.last_name} ${data.user.meta.second_last_name}`,
       created_at: new Date(data.brand_policy.created_at),
       expired_at: new Date(data.brand_policy.expired_at),
-      identification: data.documentation[0].url,
-      contract: data.documentation[1].url,
+      identification: data.documentation.find((i: any) => i.type_document === 'identification') ? data.documentation.find((i: any) => i.type_document === 'identification').url : undefined,
+      contract: data.documentation.find((i: any) => i.type_document === 'contract') ? data.documentation.find((i: any) => i.type_document === 'contract').url : undefined,
     }
     return policie;
   }

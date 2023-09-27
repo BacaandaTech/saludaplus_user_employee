@@ -10,22 +10,20 @@
       <div class="dropdown">
         <ul class="dropdown-menu" aria-labelledby="dropdown-navbar">
           <li class="cursor-pointer"><a class="dropdown-item" (click)="logoutAction()">Cerrar sesión</a></li>
+          <li class="cursor-pointer"><a class="dropdown-item" [routerLink]='["/configuracion"]'>Configuración</a></li>
         </ul>
       </div>
     </div>
   </nav>
   <nav class="navbar-bradcrumb px-5" *ngIf="has_session">
-    <div class="breadcrumb cursor-pointer">
-      <div [routerLink]='["/home"]'>
-        Inicio
-      </div>
-      <div class="ms-2 cursor-pointer" [routerLink]='["/mi-poliza"]' *ngIf="route_url === '/mi-poliza'"> > Mi póliza</div>
-      <div class="ms-2 cursor-pointer" *ngIf="route_url.includes('/cursos')"> 
-        <span class="ms-2 cursor-pointer" [routerLink]='["/cursos"]' *ngIf="route_url.includes('/cursos')"> > Cursos</span>
-        <span class="ms-2 cursor-pointer" [routerLink]='["/cursos/negocio"]' *ngIf="route_url === '/cursos/negocio'"> > Negocio</span>
-      </div>
-      
-    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]='["/home"]'>Home</a></li>
+        <li class="breadcrumb-item" *ngIf="route_url.includes('/cursos')"><a [routerLink]='["/cursos"]'>Cursos</a></li>
+        <li class="breadcrumb-item" *ngIf="route_url.includes('/configuracion')"><a [routerLink]='["/configuracion"]'>Configuración</a></li>
+        <li class="breadcrumb-item" *ngIf="route_url === '/mi-poliza'"><a [routerLink]='["/mi-poliza"]'>Mi póliza</a></li>
+      </ol>
+    </nav>
     <div>
       <span *ngIf="route_url === '/'; else elseBlock" >Consola de usuario</span>
       <ng-template #elseBlock>

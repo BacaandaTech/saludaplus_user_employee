@@ -43,13 +43,15 @@
 
   <div class="w-100 row mb-4 m-0">
     <div class="col-12 col-md-6">
-      <span class="me-3 d-block mb-2">Formato firmado</span>
-      <a [href]="policy?.contract" target="_blank">{{policy?.contract}}</a>
+      <span class="me-3 d-block mb-4">Formato firmado</span>
+      <a [href]="policy?.contract" target="_blank" *ngIf="policy?.contract;else else_contract">{{policy?.contract}}</a>
+      <ng-template #else_contract>No se ha subido ningún formato firmado</ng-template>
     </div>
 
     <div class="col-12 col-md-6">
-      <span class="me-3 d-block mb-2">Identificación</span>
-      <a [href]="policy?.identification" target="_blank">{{policy?.identification}}</a>
+      <span class="me-3 d-block mb-4">Identificación</span>
+      <a [href]="policy?.identification" target="_blank" *ngIf="policy?.identification;else else_identification">{{policy?.identification}}</a>
+      <ng-template #else_identification>No se ha subido ninguna identificación</ng-template>
     </div>
   </div>
 </section>
