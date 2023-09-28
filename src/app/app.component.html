@@ -1,73 +1,40 @@
 
 <header>
   <nav class="navbar navbar-dark bg-dark px-5">
-    <span class="navbar-brand mb-0 h1 cursor-pointer" [routerLink]='["/"]'><h1>Saluda+</h1></span>
-    <div class="d-flex align-items-center">
-      <h3 class="text-white">Hola, Usuario!</h3>
+    <span class="navbar-brand mb-0 h1 cursor-pointer" [routerLink]='["/home"]'><h1>Saluda+</h1></span>
+    <div class="d-flex align-items-center" *ngIf="has_session">
+      <h3 class="text-white">Hola, {{name_user}}!</h3>
       <span class="container-avatar-default-navbar ms-4 dropend" type="button" id="dropdown-navbar" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="../assets/img/avatar-default.svg" />
+        <img [src]="avatar_user" />
       </span>
       <div class="dropdown">
         <ul class="dropdown-menu" aria-labelledby="dropdown-navbar">
-          <li><a class="dropdown-item" href="#modal-login" data-bs-toggle="modal" >Iniciar sesión</a></li>
-          <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+          <li class="cursor-pointer"><a class="dropdown-item" (click)="logoutAction()">Cerrar sesión</a></li>
+          <li class="cursor-pointer"><a class="dropdown-item" [routerLink]='["/configuracion"]'>Configuración</a></li>
         </ul>
       </div>
     </div>
   </nav>
-  <div class="modal fade" id="modal-login" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-body">
-          <form class="px-4 py-3">
-            <div class="mb-3">
-              <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-              <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
-            </div>
-            <div class="mb-3">
-              <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-              <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
-            </div>
-            <div class="mb-3">
-              <div class="form-check">
-                <input type="checkbox" class="form-check-input" id="dropdownCheck">
-                <label class="form-check-label" for="dropdownCheck">
-                  Remember me
-                </label>
-              </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </form>
-          <div class="px-4 py-2">
-            <a class="dropdown-item" href="#">New around here? Sign up</a>
-            <a class="dropdown-item" href="#">Forgot password?</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <nav class="navbar-bradcrumb px-5">
-    <div class="breadcrumb cursor-pointer">
-      <div [routerLink]='["/"]'>
-        Inicio
-      </div>
-      <div class="ms-2 cursor-pointer" [routerLink]='["/mi-poliza"]' *ngIf="route_url === '/mi-poliza'"> > Mi póliza</div>
-      <div class="ms-2 cursor-pointer" *ngIf="route_url.includes('/cursos')"> 
-        <span class="ms-2 cursor-pointer" [routerLink]='["/cursos"]' *ngIf="route_url.includes('/cursos')"> > Cursos</span>
-        <span class="ms-2 cursor-pointer" [routerLink]='["/cursos/negocio"]' *ngIf="route_url === '/cursos/negocio'"> > Negocio</span>
-      </div>
-      
-    </div>
+  <nav class="navbar-bradcrumb px-5" *ngIf="has_session">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a [routerLink]='["/home"]'>Home</a></li>
+        <li class="breadcrumb-item" *ngIf="route_url.includes('/cursos')"><a [routerLink]='["/cursos"]'>Cursos</a></li>
+        <li class="breadcrumb-item" *ngIf="route_url.includes('/configuracion')"><a [routerLink]='["/configuracion"]'>Configuración</a></li>
+        <li class="breadcrumb-item" *ngIf="route_url === '/mi-poliza'"><a [routerLink]='["/mi-poliza"]'>Mi póliza</a></li>
+      </ol>
+    </nav>
     <div>
       <span *ngIf="route_url === '/'; else elseBlock" >Consola de usuario</span>
       <ng-template #elseBlock>
-        <div class="close-icon-return"  [routerLink]='["/"]'>
+        <div class="close-icon-return"  [routerLink]='["/home"]'>
           x
         </div>
       </ng-template>
     </div>
   </nav>
 </header>
+
 <section id="main-container">
   <router-outlet></router-outlet>
 </section>

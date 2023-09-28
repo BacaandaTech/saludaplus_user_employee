@@ -13,11 +13,11 @@ export class AuthService {
 
   constructor(
     private http: HttpClientService,
-    private router:Router
+    private router: Router
   ){}
 
-  login(credentials:AuthCredentials){
-    return this.http.getQuery('post','user/login',credentials).pipe(map( (resp) =>  resp as any));//TODO:pendiente interfaz de datos de usuario
+  login(credentials: AuthCredentials){
+    return this.http.getQuery('post','/v1/user/login',credentials).pipe(map( (resp) =>  resp as any));//TODO:pendiente interfaz de datos de usuario
   }
 
   isUserLoggedIn(){
@@ -30,7 +30,6 @@ export class AuthService {
   setCurrentUser(authStatus:any): void {
     this.currentAuthStatus.next(authStatus);
   }
-
   logout(){
     localStorage.clear();
     this.router.navigateByUrl('login');
