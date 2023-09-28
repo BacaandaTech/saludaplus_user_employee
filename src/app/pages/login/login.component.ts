@@ -4,6 +4,7 @@ import { AuthCredentials } from 'src/app/shared/interfaces/auth.interface';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 import { setUser } from 'src/app/shared/utils/utils';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -15,12 +16,13 @@ export class LoginComponent implements OnInit {
   @ViewChild('modalLogin') modal_login: any;
   setUser = setUser
   bsModalRef?: BsModalRef;
-  email: string;
-  password: string;
+
+  form_login = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
   constructor(private auth_service: AuthService, private router: Router, private modalService: BsModalService) {
-    this.email = "chinorubikguitar@yopmail.com"
-    this.password = "eoqczq";
   }
 
   ngOnInit(): void {
@@ -28,13 +30,15 @@ export class LoginComponent implements OnInit {
       this.openModal(this.modal_login);
     }, 100)
   }
+  
   loginAction(): any {
     const credentials: AuthCredentials = {
-      email: this.email,
-      password: this.password
+      email: this.form_login.value.email ?? '',
+      password: this.form_login.value.password ?? ''
     }
+
     this.auth_service.login(credentials).subscribe((response) => {
-      if (response && response.access_token) {
+      if (response && response.access_token && response.user.roles[0].name === 'collaborator') {
         localStorage.setItem('token', response.access_token);
         this.setUser(response.user)
         this.auth_service.setCurrentUser(response.user);

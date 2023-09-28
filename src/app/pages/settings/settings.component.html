@@ -6,7 +6,7 @@
           <img [src]="user?.avatar" alt="" [ngClass]="getUserClassAvatar()">
         </div>
       </div>
-      <input type="file" class="d-none" id="input-file-avatar-settings" (change)="onFileSelected($event)" [ngModel]="file_uploaded" formControlName="avatar">
+      <input type="file" class="d-none" id="input-file-avatar-settings" (change)="onFileSelected($event)" formControlName="avatar">
       <div class="ms-4 d-flex flex-column w-100">
         <span class="me-3 d-block mb-2">Apellido Paterno</span>
         <input type="text" class="form-control" placeholder="Apellido Paterno" [ngModel]="user?.last_name" formControlName="last_name">

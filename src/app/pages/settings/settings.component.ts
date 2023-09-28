@@ -36,7 +36,6 @@ export class SettingsComponent implements OnInit {
 
   ngOnInit(): void {
     this.user = this.formatData();
-    console.log(this.user)
   }
 
   formatData(): IUserSettings {
@@ -54,7 +53,7 @@ export class SettingsComponent implements OnInit {
 
   getUserClassAvatar(): string {
     const user = this.userData();
-    if (!user?.avatar) return 'avatar-default';
+    if (!user?.meta.avatar) return 'avatar-default';
     else return 'avatar-user';
   }
 
@@ -64,8 +63,7 @@ export class SettingsComponent implements OnInit {
     form_data.append('second_last_name', this.form_settings.value.second_last_name ?? '')
     form_data.append('name', this.form_settings.value.names ?? '')
     form_data.append('email', this.form_settings.value.email ?? '')
-    form_data.append('avatar', this.form_settings.value.avatar ?? '')
-    console.log(this.form_settings.value.avatar)
+    if (this.file_uploaded) form_data.append('avatar', this.file_uploaded)
     this.user_service.updateProfile(form_data).subscribe((response: any) => {
       this.setUser(response.data.user)
       this.auth_service.setCurrentUser(response.data.user)
@@ -81,6 +79,7 @@ export class SettingsComponent implements OnInit {
   onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (this.user) this.user.avatar = URL.createObjectURL(file)
+    this.file_uploaded = file;
   }
 
   showToast() {

@@ -18,11 +18,15 @@ export class AppComponent {
   private authSubscription: Subscription | undefined;
   user_data: any | undefined = getUserData
   name_user: string = '';
+  avatar_user: string = ''
 
 
   constructor(private router: Router, private auth_service: AuthService) {
     this.route_url = router.url;
-    if (this.user_data()) this.name_user = this.user_data().meta.name;
+    if (this.user_data()) {
+      this.name_user = this.user_data().meta.name;
+      this.avatar_user = this.user_data().meta.avatar ? this.user_data().meta.avatar : '../assets/img/avatar-default.svg'
+    }
   }
 
   ngOnInit(): void {

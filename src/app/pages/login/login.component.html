@@ -1,17 +1,17 @@
 <ng-template #modalLogin>
   <div class="modal-body">
-    <form class="px-4 py-3" (ngSubmit)="loginAction()" #form="ngForm">
+    <form class="px-4 py-3" (ngSubmit)="loginAction()" [formGroup]="form_login">
       <div class="mb-3">
         <label for="exampleDropdownFormEmail1" class="form-label">Email address</label>
-        <input [ngModel]="email" name="email" type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+        <input formControlName="email" type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
       </div>
       <div class="mb-3">
         <label for="exampleDropdownFormPassword1" class="form-label">Password</label>
-        <input [ngModel]="password" name="password" type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+        <input formControlName="password" type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
       </div>
       <div class="mb-3">
         <div class="form-check">
-          <input type="checkbox" class="form-check-input" id="dropdownCheck">
+          <input type="checkbox" class="form-check-input" id="dropdownCheck" disabled>
           <label class="form-check-label" for="dropdownCheck">
             Remember me
           </label>
@@ -19,9 +19,6 @@
       </div>
       <button type="submit" class="btn btn-primary">Sign in</button>
     </form>
-    <div class="px-4 py-2">
-      <a class="dropdown-item" href="#">New around here? Sign up</a>
-      <a class="dropdown-item" href="#">Forgot password?</a>
-    </div>
+  
   </div>
 </ng-template>
