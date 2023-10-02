@@ -1,0 +1,28 @@
+#main-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 85vh;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+.container-avatar-default-navbar {
+    background-color: white;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    img {
+        width: 45px;
+        height: 45px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+}
+.dropdown-menu {
+    top: 30px;
+    left: -170px;
+}
