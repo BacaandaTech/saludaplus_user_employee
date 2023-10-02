@@ -11,4 +11,12 @@ export class UserService {
   updateProfile(form_data: FormData) {
     return this.http.getQuery('post','/v1/profile/update', form_data);
   }
+
+  sendRecoverPassword(form_data: FormData) {
+    return this.http.getQuery('post', '/v1/user/send-recover-password', form_data)
+  }
+
+  recoverPasswrod(form_data: FormData) {
+    return this.http.getQuery('post', '/v1/user/recover-password', form_data)
+  }
 }

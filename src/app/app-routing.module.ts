@@ -6,6 +6,7 @@ import { PolicieComponent } from './pages/policie/policie.component';
 import { AuthGuard } from './shared/guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './pages/settings/settings.component';
+import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 
 const routes: Routes = [
   { 
@@ -16,6 +17,10 @@ const routes: Routes = [
   { 
     path: 'login', 
     component: LoginComponent
+  },
+  { 
+    path: 'restablecer/password', 
+    component: RecoverPasswordComponent,
   },
   { 
     path: '404', 

@@ -3,7 +3,7 @@ import { getUserData } from 'src/app/shared/utils/utils';
 import { IUserSettings } from 'src/app/shared/interfaces/user_settings';
 import { UserService } from 'src/app/shared/services/user/user.service';
 import { setUser } from 'src/app/shared/utils/utils';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
 declare var bootstrap: any;
 
@@ -21,10 +21,10 @@ export class SettingsComponent implements OnInit {
   setUser = setUser;
 
   form_settings = new FormGroup({
-    last_name: new FormControl(''),
-    second_last_name: new FormControl(''),
-    names: new FormControl(''),
-    email: new FormControl(''),
+    last_name: new FormControl('', Validators.required),
+    second_last_name: new FormControl('', Validators.required),
+    names: new FormControl('', Validators.required),
+    email: new FormControl('', [Validators.required, Validators.email]),
     avatar: new FormControl('')
   });
 

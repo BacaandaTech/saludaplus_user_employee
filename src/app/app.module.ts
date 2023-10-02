@@ -17,6 +17,9 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
+import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +29,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     NotFoundComponent,
     LoginComponent,
     SettingsComponent,
+    RecoverPasswordComponent,
+    NavbarComponent,
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
