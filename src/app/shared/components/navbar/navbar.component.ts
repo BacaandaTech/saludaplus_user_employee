@@ -21,8 +21,8 @@ export class NavbarComponent {
 
   constructor(private auth_service: AuthService) {
     if (this.user_data()) {
-      this.name_user = this.user_data().meta.name;
-      this.avatar_user = this.user_data().meta.avatar ? this.user_data().meta.avatar : '../assets/img/avatar-default.svg'
+      this.name_user = this.user_data().meta.name.toUpperCase();
+      this.avatar_user = this.user_data().meta.avatar ? this.user_data().meta.avatar : '../assets/img/logo/avatar-default.png'
     }
   }
 
@@ -30,8 +30,8 @@ export class NavbarComponent {
     this.authSubscription = this.auth_service.currentAuth.subscribe((auth_status) => {
       this.has_session = auth_status;
       if (this.user_data()) { 
-        this.name_user = this.user_data().meta.name;
-        this.avatar_user = this.user_data().meta.avatar ? this.user_data().meta.avatar : '../assets/img/avatar-default.svg'
+        this.name_user = this.user_data().meta.name.toUpperCase();
+        this.avatar_user = this.user_data().meta.avatar ? this.user_data().meta.avatar : '../assets/img/logo/avatar-default.png'
       }
     })
   }

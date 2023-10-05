@@ -1,20 +1,28 @@
 .policie-detail {
-    width: 100%;
-    background-color: #DDD;
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #F7F7F7;
     // height: 600px;
     border-radius: 1em;
     margin-top: 2em;
-    padding: 2em;
     color: gray;
     font-weight: 600;
-
+    overflow: hidden;
+    .policy-name-container {
+        background-color: #5686EA;
+        color: white;
+        padding: 1em;
+    }
+    .container-form {
+        padding: 1em;
+    }
     .dot-green {
         display: block;
         background-color: green;
         width: 30px;
         height: 30px;
         border-radius: 100%;
-        border: 1px solid black;
+        border: 2px solid white;
     }
 
     .dot-yellow {
@@ -23,7 +31,7 @@
         width: 30px;
         height: 30px;
         border-radius: 100%;
-        border: 1px solid black;
+        border: 2px solid white;
     }
     .form-control {
         border: 2px solid black;
