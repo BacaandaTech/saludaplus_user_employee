@@ -9,10 +9,10 @@ import { Subscription, filter } from 'rxjs';
   <nav class="navbar-bradcrumb px-5">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a [routerLink]='["/home"]'>Home</a></li>
-        <li class="breadcrumb-item" *ngIf="route_url.includes('/cursos')"><a [routerLink]='["/cursos"]'>Cursos</a></li>
-        <li class="breadcrumb-item" *ngIf="route_url.includes('/configuracion')"><a [routerLink]='["/configuracion"]'>Configuración</a></li>
-        <li class="breadcrumb-item" *ngIf="route_url === '/mi-poliza'"><a [routerLink]='["/mi-poliza"]'>Mi póliza</a></li>
+        <li class="breadcrumb-item" [routerLink]='["/home"]'>Home</li>
+        <li class="breadcrumb-item" *ngIf="route_url.includes('/cursos')" [routerLink]='["/cursos"]'>Cursos</li>
+        <li class="breadcrumb-item" *ngIf="route_url.includes('/configuracion')" [routerLink]='["/configuracion"]'>Configuración</li>
+        <li class="breadcrumb-item" *ngIf="route_url === '/mi-poliza'" [routerLink]='["/mi-poliza"]' >Mi póliza</li>
       </ol>
     </nav>
     <div>

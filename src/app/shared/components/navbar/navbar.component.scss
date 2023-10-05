@@ -1,10 +1,11 @@
-#main-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    min-height: 85vh;
-}
 .cursor-pointer {
     cursor: pointer;
+}
+.color-blue {
+    color: #1F2B5B;
+    h3 {
+        font-weight: 400;
+    }
 }
 .container-avatar-default-navbar {
     background-color: white;
@@ -16,8 +17,8 @@
     align-items: center;
     cursor: pointer;
     img {
-        width: 45px;
-        height: 45px;
+        width: 47px;
+        height: 47px;
         border-radius: 100%;
         object-fit: cover;
     }
@@ -25,4 +26,14 @@
 .dropdown-menu {
     top: 30px;
     left: -170px;
+}
+.navbar {
+    height: 100px;
+    background-color: white;
+    
+    .navbar-brand {
+        img {
+            width: 170px;
+        }
+    }
 }

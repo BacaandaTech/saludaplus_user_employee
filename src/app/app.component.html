@@ -1,8 +1,11 @@
 
-<header>
-  <app-navbar *ngIf="has_session"></app-navbar>
-</header>
-
 <section id="main-container">
-  <router-outlet></router-outlet>
+
+  <header>
+    <app-navbar *ngIf="has_session"></app-navbar>
+  </header>
+  
+  <section>
+    <router-outlet></router-outlet>
+  </section>
 </section>

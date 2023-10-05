@@ -1,6 +1,6 @@
 .navbar-bradcrumb {
-    background-color: #dddd;
-    color: gray;
+    background-color: #ACC2FE;
+    color: #1F2B5B;
     font-weight: bold;
     height: 80px;
     display: flex;
@@ -14,4 +14,7 @@
         font-weight: 400;
         cursor: pointer;
     }
+}
+.breadcrumb-item {
+    cursor: pointer;
 }
