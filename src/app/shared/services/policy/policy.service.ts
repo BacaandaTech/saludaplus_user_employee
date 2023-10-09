@@ -11,4 +11,8 @@ export class PolicyService {
   getPolicy(){
     return this.http.getQuery('get','/v1/profile/my-policy', {});
   }
+
+  openBenefits() {
+    return this.http.getQuery('get','/v1/open/benefits', {});
+  }
 }

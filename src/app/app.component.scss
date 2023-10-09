@@ -1,6 +1,9 @@
 #main-container {
+    width: 100%;
+    height: 100%;
     background: url('../assets/img/backgrounds/main_background.png');
     background-size: cover;
     background-repeat: no-repeat;
-    height: 100vh;
+    background-attachment: fixed;
+    min-height: 100vh;
 }

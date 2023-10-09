@@ -20,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
+import { BenefitsComponent } from './pages/benefits/benefits.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.c
     RecoverPasswordComponent,
     NavbarComponent,
     BreadcrumbComponent,
+    BenefitsComponent,
   ],
   imports: [
     BrowserModule,

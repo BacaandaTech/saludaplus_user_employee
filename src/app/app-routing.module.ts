@@ -7,6 +7,7 @@ import { AuthGuard } from './shared/guards/auth.guard';
 import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
+import { BenefitsComponent } from './pages/benefits/benefits.component';
 
 const routes: Routes = [
   { 
@@ -37,9 +38,18 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { 
+    path: 'beneficios', 
+    component: BenefitsComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
     path: 'cursos', 
     loadChildren: () => import('./pages/courses/courses.module').then(m => m.CoursesModule),
     canActivate: [AuthGuard]
+  },
+  { 
+    path: '**', 
+    redirectTo: 'home'
   },
 ];
 
