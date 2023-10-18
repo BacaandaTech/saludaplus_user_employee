@@ -10,7 +10,7 @@ export class HomeComponent {
     {
       name: 'Mi póliza',
       route: '/mi-poliza',
-      icon: ''
+      icon: 'check.png'
     },
     {
       name: 'Cursos',
@@ -40,8 +40,7 @@ export class HomeComponent {
     {
       name: 'Configurar',
       route: '/configuracion',
-      icon: ''
+      icon: 'gear.png'
     }
   ]
-
 }
