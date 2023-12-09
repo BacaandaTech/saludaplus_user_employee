@@ -1,5 +1,5 @@
 <section>
-  <div *ngFor="let category of categories" class="row container-home-courses">
+  <div *ngFor="let category of categories" class="row container-home-courses w-100">
     <h2>{{category.category}}</h2>
     <div class="col-6 mb-4" *ngFor="let course of category.courses">
       <div class="card card-home-redirect" [routerLink]="[course.id]">

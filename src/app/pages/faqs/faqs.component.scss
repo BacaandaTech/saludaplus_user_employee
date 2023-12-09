@@ -1,0 +1,18 @@
+.policie-detail {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #F7F7F7;
+    border-radius: 1em;
+    margin-top: 2em;
+    color: gray;
+    font-weight: 600;
+    overflow: hidden;
+    .policy-name-container {
+        background-color: #5686EA;
+        color: white;
+        padding: 1em;
+    }
+    .cursor-pointer {
+        cursor: pointer;
+    }
+}

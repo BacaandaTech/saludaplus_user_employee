@@ -42,7 +42,8 @@ export class PolicieComponent implements OnInit {
     return policie;
   }
   getColorStatus(status?: string): string {
-    if (status === 'pending') return 'dot-yellow'
-    return ''
+    if (status === 'active') return 'bg-success';
+    else if (status === 'expired') return 'bg-danger'
+    else return 'bg-warning';
   }
 }

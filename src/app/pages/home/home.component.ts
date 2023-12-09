@@ -36,7 +36,7 @@ export class HomeComponent {
     },
     {
       name: `Faq's`,
-      route: '/',
+      route: '/faqs',
       icon: ''
     },
     {
