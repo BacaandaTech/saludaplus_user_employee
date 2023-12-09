@@ -17,9 +17,4 @@ export class CoursesService {
       this.courses.next(response.data.courses)
     });
   }
-  getAdminCourses(){
-    return this.http.getQuery('get','/v1/super-admin/courses', {}).subscribe((response: any) => {
-      this.courses.next(response.data.courses)
-    });
-  }
 }
