@@ -8,13 +8,16 @@
     align-items: center;
     font-size: 20px;
 
-    .close-icon-return {
-        font-size: 40px;
-        line-height: 20px;
-        font-weight: 400;
+    .icon-phone {
+        width: 35px;
+        height: 35px;
+    }
+
+    .cursor-pointer  {
         cursor: pointer;
     }
 }
 .breadcrumb-item {
     cursor: pointer;
+
 }

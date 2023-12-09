@@ -17,8 +17,9 @@ import { Subscription, filter } from 'rxjs';
       </ol>
     </nav>
     <div>
-      <div class="close-icon-return"  [routerLink]='["/home"]'>
-        x
+      <div class="cursor-pointer d-none d-sm-block">
+        <img src="/assets/img/icons/phone-call.svg" class="icon-phone">
+        <span class="ms-2">(55) 2233 4455</span>
       </div>
     </div>
   </nav>`
