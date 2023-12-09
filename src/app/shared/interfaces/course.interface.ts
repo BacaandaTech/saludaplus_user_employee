@@ -6,5 +6,10 @@ export interface ICourse {
     end_at: string,
     super_brand: any,
     total_classes: number,
-    enrolled: boolean
+    enrolled: boolean,
+    description: string,
+    classes: any,
+    category: string,
+    teacher: string,
+    teacher_avatar: string,
 }

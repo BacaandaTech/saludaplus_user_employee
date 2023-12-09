@@ -20,5 +20,9 @@ export class DetailCourseComponent implements OnInit {
     this.courses_service.courses$.subscribe((courses) => {
       this.course = courses?.find((i) => i.id === parseInt(this.active_route.snapshot.params['id']))
     })
+    this.courses_service.getCourses();
+  }
+  openLesson(url: string): void {
+    window.open(url, '_blank');
   }
 }
