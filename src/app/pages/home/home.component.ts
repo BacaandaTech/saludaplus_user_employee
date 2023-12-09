@@ -20,17 +20,19 @@ export class HomeComponent {
     {
       name: 'Beneficios',
       route: '/beneficios',
-      icon: ''
+      icon: '',
     },
     {
       name: 'Convenios',
       route: '/',
-      icon: ''
+      icon: '',
+      hide: true,
     },
     {
       name: 'Descuentos',
       route: '/',
-      icon: ''
+      icon: '',
+      hide: true,
     },
     {
       name: `Faq's`,

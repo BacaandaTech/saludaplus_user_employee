@@ -16,6 +16,6 @@ export class HomeCoursesComponent implements OnInit {
     this.courses_service.courses$.subscribe((courses) => {
       this.courses = courses;
     })
-    this.courses_service.getCourses();    
+    this.courses_service.getAdminCourses();    
   }
 }
