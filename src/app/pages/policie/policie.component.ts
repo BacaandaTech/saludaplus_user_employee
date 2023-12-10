@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PolicyService } from 'src/app/shared/services/policy/policy.service';
 import { IPolicy } from 'src/app/shared/interfaces/policy.interface';
+
 @Component({
   selector: 'app-policie',
   templateUrl: './policie.component.html',
@@ -38,6 +39,7 @@ export class PolicieComponent implements OnInit {
       expired_at: new Date(data.brand_policy.expired_at),
       identification: data.documentation.find((i: any) => i.type_document === 'identification') ? data.documentation.find((i: any) => i.type_document === 'identification').url : undefined,
       contract: data.documentation.find((i: any) => i.type_document === 'contract') ? data.documentation.find((i: any) => i.type_document === 'contract').url : undefined,
+      certification: data.brand_policy.url
     }
     return policie;
   }
@@ -45,5 +47,29 @@ export class PolicieComponent implements OnInit {
     if (status === 'active') return 'bg-success';
     else if (status === 'expired') return 'bg-danger'
     else return 'bg-warning';
+  }
+  dowloadCertification(): void {
+    const xhr = new XMLHttpRequest();
+    const url = this.policy?.certification ? this.policy?.certification : '';
+    xhr.open('GET', url, true);
+    xhr.responseType = 'blob';
+    xhr.onload = () => {
+      console.log(xhr.status)
+      if (xhr.status === 200) {
+        const blob = xhr.response;
+        const link = document.createElement('a');
+        link.href = window.URL.createObjectURL(blob);
+        const splitted = url.split('/');
+        link.download = splitted[splitted.length - 1];
+        link.click();
+      }
+    };
+    xhr.onerror = () => {
+      if (xhr.status === 0) {
+        console.log('al parecer entre aqui')
+        window.open(url, '_blank');
+      }
+    };
+    xhr.send();
   }
 }
