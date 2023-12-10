@@ -20,3 +20,17 @@ $modal-header-padding: $modal-header-inner-padding;
         padding-bottom: 1rem;
     }
 }
+.form-control {
+    border-radius: 10em !important;
+    border: 0 !important;
+    background-color: white !important;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px !important;
+}
+.btn-success {
+    background-color: #9ED369 !important;
+    color: white !important;
+    padding: 1em 0.5em !important;
+    border-radius: 1em !important;
+    border: none !important;
+    min-width: 100px;
+}

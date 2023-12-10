@@ -8,4 +8,5 @@ export interface IPolicy {
     expired_at: Date,
     identification: string | null | undefined,
     contract: string | null | undefined,
+    certification: string
 }

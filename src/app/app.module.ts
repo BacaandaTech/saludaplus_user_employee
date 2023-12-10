@@ -21,6 +21,7 @@ import { RecoverPasswordComponent } from './pages/recover-password/recover-passw
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 import { BenefitsComponent } from './pages/benefits/benefits.component';
+import { FaqsComponent } from './pages/faqs/faqs.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { BenefitsComponent } from './pages/benefits/benefits.component';
     NavbarComponent,
     BreadcrumbComponent,
     BenefitsComponent,
+    FaqsComponent,
   ],
   imports: [
     BrowserModule,

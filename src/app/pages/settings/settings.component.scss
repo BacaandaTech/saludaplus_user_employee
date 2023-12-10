@@ -1,5 +1,7 @@
 .section-home {
   max-width: 1400px;
+  border-radius: 1em;
+  overflow: hidden;
   
   .main-avatar-user-container {
     height: 250px;
@@ -7,11 +9,10 @@
     width: 250px;
     background-color: white;
     border-radius: 100%;
-    border: 3px solid black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    border: 3px solid #5686EA;
     cursor: pointer;
+
+    
     
     .avatar-user {
       width: 100%;
@@ -33,10 +34,19 @@
       width: 150px;
     }
   }
+  .badge-blue {
+    background-color: #5686EA;
+    color: white;
+    padding: 2em;
+  }
+  .margin-negative-for-avatar {
+    display: flex;
+    justify-content: center;
+    margin-top: -5em;
+  }
 }
 .section-gray-coursers {
   background-color: #F7F7F7;
-  border-radius: 1em;
 } 
 .toast-setting {
   top: 6em;

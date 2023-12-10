@@ -25,15 +25,25 @@
         border: 2px solid white;
     }
 
-    .dot-yellow {
+    .dot {
         display: block;
-        background-color: rgb(218, 221, 13);
         width: 30px;
         height: 30px;
         border-radius: 100%;
-        border: 2px solid white;
+
+        &.yellow {
+            background-color: rgb(218, 221, 13);
+        }
     }
-    .form-control {
-        border: 2px solid black;
+    .title-documents {
+        color: #5686EA;
+    }
+    .img-blue-clip {
+        width: 15px;
+        height: 100%;
+        margin-left: 0.5em;
+    }
+    .a-links {
+        word-break: break-all;
     }
 }

@@ -8,6 +8,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { SettingsComponent } from './pages/settings/settings.component';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 import { BenefitsComponent } from './pages/benefits/benefits.component';
+import { FaqsComponent } from './pages/faqs/faqs.component';
 
 const routes: Routes = [
   { 
@@ -30,6 +31,11 @@ const routes: Routes = [
   { 
     path: 'configuracion', 
     component: SettingsComponent,
+    canActivate: [AuthGuard]
+  },
+  { 
+    path: 'faqs', 
+    component: FaqsComponent,
     canActivate: [AuthGuard]
   },
   { 
