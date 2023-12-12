@@ -1,6 +1,6 @@
 <nav class="navbar px-2 px-sm-5">
   <span class="navbar-brand mb-0 cursor-pointer" [routerLink]='["/home"]'>
-    <img src="../../../../assets/img/logo/RI.png" alt="realinver-realidades-de-inversion">
+    <img [src]="logo_brand" alt="realinver-realidades-de-inversion">
   </span>
   <div class="d-flex align-items-center color-blue" *ngIf="has_session">
     <h3 class="m-0 d-none d-sm-block">¡HOLA, {{name_user.substring(0, 10)}}{{name_user.length > 10 ? '...' : ''}}!</h3>

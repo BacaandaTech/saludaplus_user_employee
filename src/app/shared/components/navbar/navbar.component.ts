@@ -17,7 +17,7 @@ export class NavbarComponent {
   user_data: any | undefined = getUserData
   name_user: string = '';
   avatar_user: string = ''
-
+  logo_brand: string = '';
 
   constructor(private auth_service: AuthService) {
     if (this.user_data()) {
@@ -32,6 +32,8 @@ export class NavbarComponent {
       if (this.user_data()) { 
         this.name_user = this.user_data().meta.name.toUpperCase();
         this.avatar_user = this.user_data().meta.avatar ? this.user_data().meta.avatar : '../assets/img/logo/avatar-default.png'
+        this.logo_brand = this.user_data().brand.logo ? this.user_data().brand.logo : '../../../../assets/img/logo/saluda+.png';
+        
       }
     })
   }
