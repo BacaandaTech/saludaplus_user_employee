@@ -1,0 +1,26 @@
+<section class="main-container-benefits mx-auto">
+  <div class="text-start w-100 mb-5">
+    <h1>!HOLA {{name_user}}!</h1>
+    <h3>Estos  son los beneficios que tenemos para ti:</h3>
+  </div>
+  <div class="row">
+    <div class="col mb-4" *ngFor="let item of benefits">
+      <div class="position-relative d-flex justify-content-center">
+        <img src="./../../../assets/img/backgrounds/{{item.image}}" class="main-image" (click)="openModal(modalInfo, item)">
+        <img src="./../../../assets/img/icons/{{item.icon}}" class="icon-benefits" (click)="openModal(modalInfo, item)">
+        <div class="info-relevant-card" (click)="openModal(modalInfo, item)" >
+          <h4>{{item.title}}</h4>
+          <p>{{item.description.substring(0, 130)}} {{item.description.length > 130 ? '...' : ''}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <ng-template #modalInfo >
+    <div class="custom-modal modal-body" >
+      <div>
+        <div [innerHTML]="benefit_select.text_long"></div>
+      </div>
+    </div>
+  </ng-template>
+</section>

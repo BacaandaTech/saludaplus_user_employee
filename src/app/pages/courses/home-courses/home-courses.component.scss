@@ -1,10 +1,13 @@
-.card-home-redirect {
+.card-title {
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
     cursor: pointer;
-    border: 2px solid black;
-    min-height: 226px;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
+}
+.cursor-pointer {
+    cursor: pointer;
 }
 .container-home-courses {
     h2 {

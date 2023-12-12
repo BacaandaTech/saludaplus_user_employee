@@ -9,7 +9,7 @@
         >
           <div class="menu-item" [routerLink]="item.route">
             <div class="menu-icon">
-              <img src="/assets/img/icons/{{ item.icon }}" alt="" />
+              <img src="/assets/img/icons/{{ item.icon }}" alt="" [ngClass]="item.class"/>
             </div>
             <div class="menu-text">
               <div class="border-circle"></div>

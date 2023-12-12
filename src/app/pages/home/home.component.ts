@@ -15,12 +15,13 @@ export class HomeComponent {
     {
       name: 'Cursos',
       route: '/cursos',
-      icon: ''
+      icon: 'cursos.png',
+      class: 'size-sm',
     },
     {
       name: 'Beneficios',
       route: '/beneficios',
-      icon: '',
+      icon: 'descuentos.png',
     },
     {
       name: 'Convenios',
@@ -37,7 +38,7 @@ export class HomeComponent {
     {
       name: `Faq's`,
       route: '/faqs',
-      icon: ''
+      icon: 'FAQsicono.png'
     },
     {
       name: 'Configurar',

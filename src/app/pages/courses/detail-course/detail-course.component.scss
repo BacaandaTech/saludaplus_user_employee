@@ -12,19 +12,30 @@
         object-fit: cover;
     }
 }
-.card-leccions-redirect {
+.cursor-pointer {
     cursor: pointer;
-    border: 2px solid black;
-    min-height: 150px;
-    width: 150px;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: end;
-    border-radius: 1em;
-    
-    .title-lection {
-        text-align: center;
-        font-size: 14px;
-    }
+}
+.policy-name-container {
+    background-color: #5686EA;
+    color: white;
+    padding: 1em;
+    border-top-right-radius: 1em;
+    border-top-left-radius: 1em;
+}
+.title-lection {
+    cursor: pointer;
+    width: 235px;
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    color: white;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 14px;
+}
+.img-icon {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
