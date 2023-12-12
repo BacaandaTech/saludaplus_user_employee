@@ -20,7 +20,7 @@ import { Subscription, filter } from 'rxjs';
     <div>
       <div class="cursor-pointer d-none d-sm-block">
         <img src="/assets/img/icons/phone-call.svg" class="icon-phone">
-        <span class="ms-2">(55) 2233 4455</span>
+        <span class="ms-2">(55) 8842 7862</span>
       </div>
     </div>
   </nav>`

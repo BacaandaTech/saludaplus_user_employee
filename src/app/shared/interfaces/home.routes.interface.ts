@@ -3,4 +3,5 @@ export interface IHomeRoutes {
     route: string,
     icon: string,
     hide?: boolean,
+    class?: string
 }

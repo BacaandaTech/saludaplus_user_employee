@@ -1,10 +1,15 @@
 <section>
-  <div *ngFor="let category of categories" class="row container-home-courses w-100">
-    <h2>{{category.category}}</h2>
-    <div class="col-6 mb-4" *ngFor="let course of category.courses">
-      <div class="card card-home-redirect" [routerLink]="[course.id]">
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title mb-0">{{course.name}}</h5>
+  <div *ngFor="let category of categories" class="row container-home-courses w-100 p-5 pb-0">
+    <h2>{{category.category.toUpperCase()}}</h2>
+    <div class="col-6 " *ngFor="let course of category.courses">
+      <div class="position-relative  d-flex justify-content-center">
+        <img 
+          src="./../../../../assets/img/backgrounds/imagenleccion2x.png" 
+          [routerLink]="[course.id]" 
+          class="cursor-pointer"
+        >
+        <div class="card-title ">
+          <h5>{{course.name}}</h5>
         </div>
       </div>
     </div>

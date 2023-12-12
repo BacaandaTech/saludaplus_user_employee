@@ -54,7 +54,7 @@
           <div class="px-4 mb-4">
             <div class="form-control">
               <a class="d-flex justify-content-between align-items-center a-links" [href]="policy?.contract" target="_blank" *ngIf="policy?.contract;else else_contract">
-                {{policy?.contract}}
+                Ver documento
                 <img src="./../../../assets/img/icons/clip.png" class="img-blue-clip">
               </a>
 
@@ -70,7 +70,7 @@
         <div class="px-4 mb-4">
           <div class="form-control">
             <a class="d-flex justify-content-between align-items-center a-links" [href]="policy?.identification" target="_blank" *ngIf="policy?.identification;else else_identification">
-              {{policy?.identification}}
+              Ver documento
               <img src="./../../../assets/img/icons/clip.png" alt="" class="img-blue-clip">
             </a>
             <ng-template #else_identification>No se ha subido ninguna identificación</ng-template>
