@@ -13,6 +13,6 @@ export class PolicyService {
   }
 
   openBenefits() {
-    return this.http.getQuery('get','/v1/open/benefits', {});
+    return this.http.getQuery('get','/v1/collaborator/benefits', {});
   }
 }

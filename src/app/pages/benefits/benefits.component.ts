@@ -4,6 +4,7 @@ import { PolicyService } from 'src/app/shared/services/policy/policy.service';
 import { DomSanitizer } from '@angular/platform-browser';
 import { getUserData } from 'src/app/shared/utils/utils';
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-benefits',
@@ -185,10 +186,16 @@ export class BenefitsComponent implements OnInit {
       }
     })
   }
+  showToast() {
+    const toast_element: any = document.getElementById('toast-error');
+    const toast: any = new bootstrap.Toast(toast_element);
+    toast.show();
+  }
   openModal(template: TemplateRef<any>, benefit: any): void {
-    
+    console.log(benefit);
     this.benefit_select = this.benefits.find(i => i.title === benefit.title)
     if (benefit.action === 'modal') this.bsModalRef = this.modalService.show(template);
-    else window.open(benefit.action, '_blank');
+    else if (benefit.action)  window.open(benefit.action, '_blank');
+    else this.showToast();
   }
 }
