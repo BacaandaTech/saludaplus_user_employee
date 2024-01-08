@@ -11,12 +11,24 @@ export class FaqsComponent {
   constructor() {
     this.faqs = [
       {
-        title: "¿CÓMO HAGO VÁLIDO MI SEGURO?",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, optio similique animi dignissimos quos quidem veritatis dolor sunt mollitia impedit voluptate aut facere ducimus cum. Quae beatae ipsam quaerat quas. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus aliquid quidem ea ipsa? Nesciunt laudantium ducimus vel, explicabo officiis repellat beatae sequi nisi eveniet obcaecati quam totam! Dolorum, voluptatibus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti iure deleniti temporibus labore deserunt esse veritatis ullam, harum iusto mollitia nobis, alias modi aliquid, incidunt possimus necessitatibus ducimus nesciunt numquam?"
+        title: "¿QUÉ ES SALUDA+?",
+        description: "Una membresía que los empleadores pueden contratar para sus empleados para brindarles una protección extra ante cualquier inconveniente o accidente, así como brindándoles más herramientas para que puedan desarrollarse dentro de la empresa."
       },
       {
-        title: "¿QUÉ  BENEFICIOS TENGO?",
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo, optio similique animi dignissimos quos quidem veritatis dolor sunt mollitia impedit voluptate aut facere ducimus cum. Quae beatae ipsam quaerat quas. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nihil delectus aliquid quidem ea ipsa? Nesciunt laudantium ducimus vel, explicabo officiis repellat beatae sequi nisi eveniet obcaecati quam totam! Dolorum, voluptatibus. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Corrupti iure deleniti temporibus labore deserunt esse veritatis ullam, harum iusto mollitia nobis, alias modi aliquid, incidunt possimus necessitatibus ducimus nesciunt numquam?"
+        title: "¿QUÉ COMPRENDE LA MEMBRESÍA?",
+        description: "Servicios médicos, servicios corporativos, servicios financieros, desarrollo profesional, cumplimiento de la NOM-035."
+      },
+      {
+        title: "¿CUÁLES SON LOS HORARIOS DE ATENCIÓN MÉDICA?",
+        description: "9:00 am a 18:00 hrs Lunes a Sábado 30 minutos. Dentro México y USA."
+      },
+      {
+        title: "¿QUÉ ES LA NOM-035?",
+        description: "La ley que obliga a los empleadores establecer los elementos para identificar, analizar y prevenir los factores de riesgo psicosocial, así como para promover un entorno organizacional favorable en los centros de trabajo."
+      },
+      {
+        title: "¿CÓMO CUMPLIMOS CON LA NOM-035?",
+        description: "Al adquirir SALUDA+ te incluimos sin costo la encuesta de nivel de estrés que te obliga la ley a través de la NOM-035 a realizar periódicamente a tus empleados para garantizar un lugar de trabajo sano. Además ofrecemos diversos cursos para el desarrollo personal y profesional de los colaboradores reduciendo el estrés y manteniendo un excelente ambiente laboral."
       }
     ]
   }
