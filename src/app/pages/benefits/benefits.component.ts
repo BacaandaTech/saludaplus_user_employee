@@ -192,7 +192,6 @@ export class BenefitsComponent implements OnInit {
     toast.show();
   }
   openModal(template: TemplateRef<any>, benefit: any): void {
-    console.log(benefit);
     this.benefit_select = this.benefits.find(i => i.title === benefit.title)
     if (benefit.action === 'modal') this.bsModalRef = this.modalService.show(template);
     else if (benefit.action)  window.open(benefit.action, '_blank');
