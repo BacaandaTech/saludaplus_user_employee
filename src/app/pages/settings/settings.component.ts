@@ -5,8 +5,8 @@ import { UserService } from 'src/app/shared/services/user/user.service';
 import { setUser } from 'src/app/shared/utils/utils';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
-declare var bootstrap: any;
-
+import { ToastrService } from 'ngx-toastr';
+import { CONFIG_TOAST } from 'src/app/shared/utils/utils.interface';
 @Component({
   selector: 'app-settings',
   templateUrl: './settings.component.html',
@@ -28,7 +28,7 @@ export class SettingsComponent implements OnInit {
     avatar: new FormControl('')
   });
 
-  constructor(private user_service: UserService, private auth_service: AuthService) {
+  constructor(private user_service: UserService, private auth_service: AuthService, private toast: ToastrService) {
     this.user = null;
     this.file_uploaded = null;
   }
@@ -67,7 +67,7 @@ export class SettingsComponent implements OnInit {
     this.user_service.updateProfile(form_data).subscribe((response: any) => {
       this.setUser(response.data.user)
       this.auth_service.setCurrentUser(response.data.user)
-      this.showToast();
+      this.toast.success(`Tu perfil ha sido actualizado exitosamente`, 'Éxito',CONFIG_TOAST);
     })
   }
   addAvatar() {
@@ -80,11 +80,5 @@ export class SettingsComponent implements OnInit {
     const file: File = event.target.files[0];
     if (this.user) this.user.avatar = URL.createObjectURL(file)
     this.file_uploaded = file;
-  }
-
-  showToast() {
-    const toast_elemente: any = document.getElementById('toast-setting');
-    const toast: any = new bootstrap.Toast(toast_elemente);
-    toast.show();
   }
 }

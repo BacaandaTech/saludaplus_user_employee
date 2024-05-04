@@ -22,6 +22,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { BreadcrumbComponent } from './shared/components/breadcrumb/breadcrumb.component';
 import { BenefitsComponent } from './pages/benefits/benefits.component';
 import { FaqsComponent } from './pages/faqs/faqs.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FaqsComponent } from './pages/faqs/faqs.component';
     FormsModule,
     HttpClientModule,
     ModalModule.forRoot(),
+    ToastrModule.forRoot(),
     ReactiveFormsModule,
   ],
   providers: [
