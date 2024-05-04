@@ -14,7 +14,7 @@
             </div>
           </div>
         </div>
-        <input type="file" class="d-none" id="input-file-avatar-settings" (change)="onFileSelected($event)" formControlName="avatar">
+        <input type="file" class="d-none" accept=".jpg, .png, .jpeg" id="input-file-avatar-settings" (change)="onFileSelected($event)" formControlName="avatar">
         <div class="col-12 col-md-6">
           <span class="me-3 d-block mb-2">Apellido Paterno</span>
           <div class="px-4 mb-4">
@@ -46,15 +46,3 @@
     </form>
   </div>
 </section>
-
-<div class="toast-container position-absolute toast-setting">
-  <div class="toast" id="toast-setting">
-    <div class="toast-header">
-      <strong class="me-auto">Actualizado</strong>
-      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-    </div>
-    <div class="toast-body">
-      Tu perfil ha sido actualizado exitosamente
-    </div>
-  </div>
-</div>

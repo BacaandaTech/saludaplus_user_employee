@@ -2,11 +2,13 @@
 
 /* Importing Bootstrap SCSS file. */
 @import './assets/styles/modals';
+@import 'ngx-toastr/toastr';
 
 @import "./node_modules/bootstrap/scss/bootstrap";
 
 /* Importing Datepicker SCSS file. */
 @import "node_modules/ngx-bootstrap/datepicker/bs-datepicker";
+@import 'ngx-toastr/toastr-bs5-alert';
 
 .btn-rounded {
     border-radius: 20px;

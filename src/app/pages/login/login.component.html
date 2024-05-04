@@ -40,7 +40,7 @@
     <div *ngIf="password_recover_view">
       <h4>Recupera tu cuenta</h4>
       <p>Se ha enviado un email a la cuenta <strong>{{form_login.value.email}}</strong>, con el link para recuperar tu cuenta.</p>
-      <a class="mt-3 d-block cursor-pointer" (click)="forgot_password_view = false; password_recover_view = false;">< Regresar</a>
+      <a class="mt-3 d-block cursor-pointer forgot-password" (click)="forgot_password_view = false; password_recover_view = false;">< Regresar</a>
     </div>
   </div>
 </ng-template>
