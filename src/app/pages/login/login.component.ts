@@ -48,7 +48,7 @@ export class LoginComponent implements OnInit {
 
     this.auth_service.login(credentials).pipe(takeUntil(this.unsuscribe$)).subscribe({
       next: (response: any) => {
-        if (response && response.access_token && response.user.roles[0].name === 'collaborator') {
+        if (response && response.access_token && (response.user.roles[0].name === 'collaborator' || response.user.is_beneficiary)) {
           this.handleSuccesLogin(response)
           this.auth_service.setCurrentUser(response.user);
           this.router.navigateByUrl('/home');
