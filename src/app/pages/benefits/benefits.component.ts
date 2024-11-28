@@ -130,7 +130,7 @@ export class BenefitsComponent implements OnInit {
         text_long: `
         <p>Recuerda que como miembro de Club SALUDA+, tienes acceso a servicios médicos excepcionales. Desde consultas telefónicas hasta orientación sobre tratamientos, nuestro equipo médico está aquí para apoyarte en cada paso de tu viaje hacia el bienestar.</p>
     
-        <p>Para obtener asistencia médica inmediata, marca los números de proporcionados y experimenta el compromiso de Club SALUDA+ con tu bienestar. Recuerda que es importante tener tu número de póliza a la mano, éste lo encontrarás en la sección Mi póliza dentro de esta plataforma.</p>
+        <p>Para obtener asistencia médica inmediata, marca los números de proporcionados y experimenta el compromiso de Club SALUDA+ con tu bienestar. Recuerda que es importante tener tu número de membresía a la mano, éste lo encontrarás en la sección Mi membresía dentro de esta plataforma.</p>
         
         <h3>Servicios:</h3>
         <ul>

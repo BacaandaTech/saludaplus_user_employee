@@ -12,7 +12,7 @@ import { Subscription, filter } from 'rxjs';
         <li class="breadcrumb-item" [routerLink]='["/home"]'>Home</li>
         <li class="breadcrumb-item" *ngIf="route_url.includes('/cursos')" [routerLink]='["/cursos"]'>Cursos</li>
         <li class="breadcrumb-item" *ngIf="route_url.includes('/configuracion')" [routerLink]='["/configuracion"]'>Configuración</li>
-        <li class="breadcrumb-item" *ngIf="route_url === '/mi-poliza'" [routerLink]='["/mi-poliza"]' >Mi póliza</li>
+        <li class="breadcrumb-item" *ngIf="route_url === '/mi-membresía'" [routerLink]='["/mi-membresia"]' >Mi membresía</li>
         <li class="breadcrumb-item" *ngIf="route_url === '/faqs'" [routerLink]='["/faqs"]' >FAQS</li>
         <li class="breadcrumb-item" *ngIf="route_url === '/beneficios'" [routerLink]='["/beneficios"]' >Beneficios</li>
       </ol>
