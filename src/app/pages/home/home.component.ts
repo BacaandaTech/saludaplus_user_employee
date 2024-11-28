@@ -8,8 +8,8 @@ import { IHomeRoutes } from 'src/app/shared/interfaces/home.routes.interface';
 export class HomeComponent {
   public main_routes: IHomeRoutes[] = [
     {
-      name: 'Mi póliza',
-      route: '/mi-poliza',
+      name: 'Mi membresía',
+      route: '/mi-membresia',
       icon: 'check.png'
     },
     {

@@ -39,7 +39,7 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   { 
-    path: 'mi-poliza', 
+    path: 'mi-membresia', 
     component: PolicieComponent,
     canActivate: [AuthGuard]
   },
