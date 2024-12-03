@@ -34,7 +34,7 @@ export class PolicieComponent implements OnInit {
       folio: data.brand_policy.policy.folio,
       status: data.status,
       user_id: data.user.id,
-      user_name: `${data.user.meta.name} ${data.user.meta.last_name} ${data.user.meta.second_last_name}`,
+      user_name: `${data.user.meta.last_name} ${data.user.meta.second_last_name} ${data.user.meta.name}`,
       created_at: new Date(data.brand_policy.created_at),
       expired_at: new Date(data.brand_policy.expired_at),
       identification: data.documentation.find((i: any) => i.type_document === 'identification') ? data.documentation.find((i: any) => i.type_document === 'identification').url : undefined,
