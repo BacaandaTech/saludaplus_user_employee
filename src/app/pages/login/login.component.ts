@@ -7,6 +7,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user/user.service';
 import { Subject, takeUntil } from 'rxjs';
 import { HttpErrorResponse } from '@angular/common/http';
+import { ToastrService } from 'ngx-toastr';
+import { CONFIG_TOAST } from '../../shared/utils/utils.interface';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +32,8 @@ export class LoginComponent implements OnInit {
     private auth_service: AuthService, 
     private router: Router, 
     private modalService: BsModalService,
-    private user_service: UserService
+    private user_service: UserService,
+    private toast: ToastrService
   ) {
   }
 
@@ -53,6 +56,8 @@ export class LoginComponent implements OnInit {
           this.auth_service.setCurrentUser(response.user);
           this.router.navigateByUrl('/home');
           this.bsModalRef?.hide()
+        } else {
+          this.toast.error('No cuentas con los permisos necesarios para acceder', 'Error', CONFIG_TOAST);
         }
       },
       error: (error: HttpErrorResponse) => {
@@ -85,5 +90,4 @@ export class LoginComponent implements OnInit {
     localStorage.setItem("permissions", JSON.stringify(response.user.permissions));
     localStorage.setItem("expires_in", JSON.stringify(Date.now() + response.expires_in ));
   }
-
 }
