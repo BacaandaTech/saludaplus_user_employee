@@ -20,7 +20,7 @@ export class FaqsComponent {
       },
       {
         title: "¿CUÁLES SON LOS HORARIOS DE ATENCIÓN MÉDICA?",
-        description: ""
+        html: "<ul><li>Asistencia de urgencia al call center a cualquier hora los 365 días del año.</li><li>Programación de citas y atención por WhatsApp de 8:00 am a 20:00 pm de lunes a viernes y sábados de 9:00 am a 14:00 pm horario centro de México.</li></ul>"
       },
       {
         title: "¿QUÉ ES LA NOM-035?",
