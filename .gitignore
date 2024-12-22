@@ -8,7 +8,9 @@
 
 # Node
 /node_modules
-npm-debug.log
+/src/environments/environment.development.ts
+/src/environments/environment.ts
+
 yarn-error.log
 
 # IDEs and editors
