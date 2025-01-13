@@ -1,8 +1,8 @@
-import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { Component, TemplateRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthCredentials } from 'src/app/shared/interfaces/auth.interface';
 import { AuthService } from 'src/app/shared/services/auth/auth.service';
-import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef, BsModalService, ModalDirective } from 'ngx-bootstrap/modal';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user/user.service';
 import { Subject, takeUntil } from 'rxjs';
@@ -16,13 +16,11 @@ import { CONFIG_TOAST } from '../../shared/utils/utils.interface';
   styleUrls: ['./login.component.scss']
 })
 
-export class LoginComponent implements OnInit {
-  @ViewChild('modalLogin') modal_login: any;
+export class LoginComponent {
   bsModalRef?: BsModalRef;
   forgot_password_view: boolean = false;
   private unsuscribe$: Subject<void> = new Subject();
   password_recover_view: boolean = false;
-
   form_login = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', Validators.required),
@@ -36,13 +34,12 @@ export class LoginComponent implements OnInit {
     private toast: ToastrService
   ) {
   }
-
-  ngOnInit(): void {
-    setTimeout(() => {
-      this.openModal(this.modal_login);
-    }, 100)
+  @ViewChild('autoShownModal', { static: false }) autoShownModal?: ModalDirective;
+  isModalShown = true;
+ 
+  showModal(): void {
+    this.isModalShown = false;
   }
-  
   loginAction(): any {
     const credentials: AuthCredentials = {
       email: this.form_login.value.email ?? '',
